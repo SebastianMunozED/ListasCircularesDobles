@@ -8,20 +8,19 @@ public class ListaCircularD {
 		primero = null;
 		ultimo = null;
 	}
-	//primero null
-	//segundo null
-	//valor x = 36
-	//Se hace un circulo
-	// 36<---36---->36
+	
+	
 	public void ingresarNodo(int x){
 		Nodo nuevo = new Nodo();
 		nuevo.dato = x;
+		//para insertar al inicio
 		if(primero == null){
 			primero = nuevo;
 			primero.siguiente = primero;
 			nuevo.anterior = ultimo;
 			ultimo = nuevo;
-		} else{
+		}//para insertar al final
+		else{
 			ultimo.siguiente = nuevo;
 			nuevo.siguiente = primero;
 			nuevo.anterior = ultimo;
@@ -33,8 +32,7 @@ public class ListaCircularD {
 			Nodo actual = new Nodo();
 			actual = primero;
 			System.out.println("\nLista de Nodos Ingresados");
-			do{
-				
+			do{	
 				System.out.println(actual.dato);
 				actual = actual.siguiente;
 				
@@ -49,15 +47,19 @@ public class ListaCircularD {
 			anterior = ultimo;
 			do{
 				if(actual.dato == x){
+					//eliminar al comienzo
 					if(actual == primero){
 						primero = primero.siguiente;
 						ultimo.siguiente = primero;
 						primero.anterior = ultimo;
-					}else if(actual == ultimo){
+					}
+					// eliminar al final
+					else if(actual == ultimo){
 					ultimo = anterior;
 					primero.anterior = ultimo;
 					ultimo.siguiente = primero;
-					} else {
+					}//eliminar al medio 
+					else {
 					anterior.siguiente = actual.siguiente;
 					actual.siguiente.anterior = anterior;
 				}
@@ -86,5 +88,30 @@ public class ListaCircularD {
 				System.out.println("Nodo "+x+" no encontrado");
 			}
 		}	
+			
+		
+		public void buscarIndice(int x){
+			Nodo actual = new Nodo();
+			actual = ultimo;
+			int indice = 1;
+			boolean encontrado = false;
+			System.out.println("\nBusqueda del Nodo "+x);
+			do{
+				if(actual.dato == x){
+					encontrado = true;
+				}
+				 actual = actual.anterior;
+				 indice = indice++;
+				
+			}while ( actual != ultimo && encontrado != true);
+			if(encontrado == true){
+				System.out.println("Nodo en el indice "+indice+" encontrado");
+			}
+		}	
+		
+		
+		
+		
+		
 }
 
