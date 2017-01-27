@@ -92,21 +92,24 @@ public class ListaCircularD {
 		
 		public void buscarIndice(int x){
 			Nodo actual = new Nodo();
-			actual = ultimo;
-			int indice = 1;
+			actual = primero;
+			int indice = 0;
 			boolean encontrado = false;
-			System.out.println("\nBusqueda del Nodo "+x);
+			System.out.println("\nBusqueda Indice del Nodo "+x);
 			do{
-				if(actual.dato == x){
+				indice ++;
+				if(actual.getDato() == x){
 					encontrado = true;
 				}
-				 actual = actual.anterior;
-				 indice = indice++;
+				 actual = actual.siguiente;
 				
-			}while ( actual != ultimo && encontrado != true);
+			}while ( actual != primero && encontrado != true);
 			if(encontrado == true){
 				System.out.println("Nodo en el indice "+indice+" encontrado");
+			}else {
+				System.out.println("Nodo no existe en la lista");
 			}
+			
 		}	
 		
 		public void ingresarIntermedioNodo(int x, int y){
