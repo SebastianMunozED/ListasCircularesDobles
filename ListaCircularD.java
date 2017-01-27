@@ -109,7 +109,29 @@ public class ListaCircularD {
 			}
 		}	
 		
-		
+		public void ingresarIntermedioNodo(int x, int y){
+			Nodo actual = new Nodo();
+			Nodo nuevo = new Nodo();
+			nuevo.dato = y;
+			actual = ultimo;
+			boolean encontrado = false;
+			do{
+				if(actual.dato == x){
+					encontrado = true;
+				}
+				actual = actual.anterior;
+				
+			}while ( actual != ultimo && encontrado != true);
+			if(encontrado == true){
+				actual = actual.siguiente;
+				actual.anterior.siguiente = nuevo;
+				nuevo.siguiente = actual;
+				nuevo.anterior = actual.anterior;
+				actual.anterior = nuevo;
+				}else {
+				System.out.println("Nodo "+x+" no encontrado imposible insertar");
+			}
+		}
 		
 		
 		
