@@ -4,23 +4,27 @@ public class Aplicacion {
 
 	public static void main(String[] args) {
 		ListaCircularD l = new ListaCircularD();
+		
 		l.ingresarNodo(36);
-		l.ingresarNodo(57);
-		l.ingresarNodo(62);
+		l.ingresarNodo(11);
+		l.ingresarNodo(4);
+		l.ingresarNodo(6);
+		l.ingresarNodo(13);
+		l.ingresarNodo(14);
 		l.Desplegar();
+
+		System.out.println("-____-");
+		l.Desplegar2();
 		
-		l.ingresarNodo(25);
+		
+		l.ingresarIntermedioNodo(6,200);
+		l.ingresarIntermedioNodo(11,200);
+		l.ingresarIntermedioNodo(1,200);
+		
+		
 		l.Desplegar();
-		
-		l.buscarNodo(11);
-		
-		l.eliminarNodo(36);
-		l.Desplegar();
-		
-		l.eliminarNodo(62);
-		l.Desplegar();
-		
-		l.buscarNodo(57);
+		l.buscarNodo(36);
+		l.buscarIndice(4);
 	}
 
 }
