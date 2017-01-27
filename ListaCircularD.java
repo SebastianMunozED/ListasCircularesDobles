@@ -38,6 +38,15 @@ public class ListaCircularD {
 				
 			} while (actual!= primero); 
 		}
+	
+	
+	public void Desplegar2(){
+			Nodo actual = new Nodo();
+			actual = ultimo;
+			System.out.println(actual.siguiente.dato);
+			System.out.println(actual.anterior.dato);
+			
+		}
 		
 		public void eliminarNodo(int x){
 			Nodo actual = new Nodo();
